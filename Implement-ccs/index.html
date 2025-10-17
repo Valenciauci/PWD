@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="id" lang="id">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Reservasi Hotel — Aurora</title>
+  <style type="text/css">
+  /*<![CDATA[*/
+  * { box-sizing:border-box; }
+  body{
+    margin:0; color:#311b0b;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+    line-height:1.6;
+    background:linear-gradient(180deg,#fff8f3,#fffdf8);
+  }
+  .page{max-width:1060px;margin:0 auto 40px; padding:0 18px;}
+
+  /* ===== HERO FOTO ===== */
+  .hero{
+    position:relative; margin:22px 0 16px; border-radius:20px; overflow:hidden;
+    border:1px solid #f1e6e4;
+    background-size:cover; background-position:center;
+    background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&amp;w=1600&amp;auto=format&amp;fit=crop');
+    height:360px; box-shadow:0 16px 32px rgba(77,20,20,.25);
+  }
+  .hero-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(115deg, rgba(127,29,29,.6), rgba(217,119,6,.45));
+  }
+  .hero-content{
+    position:absolute; inset:0; display:flex; align-items:flex-end;
+    padding:24px; color:#fffceb; text-shadow:0 8px 24px rgba(0,0,0,.35);
+  }
+  .hero h1{margin:0 0 6px 0; font-size:34px; letter-spacing:.3px;}
+  .hero p{margin:0; font-size:16px; opacity:.95;}
+
+  /* ===== GALERI ===== */
+  .gallery{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:14px 0 20px;
+  }
+  .tile{border-radius:14px; overflow:hidden; border:1px solid #f1e6e4; background:#fff;}
+  .tile img{display:block; width:100%; height:200px; object-fit:cover;}
+  .caption{padding:8px 10px; font-size:13px; color:#5e4030;}
+
+  /* ===== FORM ===== */
+  .card{background:#fffaf6; border:1px solid #f1e6e4; border-radius:18px; box-shadow:0 10px 24px rgba(77,20,20,.1);}
+  .form{padding:20px 18px 10px;}
+  fieldset{border:0; padding:14px 0 10px; margin:10px 0 2px; border-top:1px dashed #ecd6c7;}
+  legend{
+    display:inline-block; padding:4px 12px; font-weight:700; color:#4b1d06;
+    background:linear-gradient(90deg, rgba(191,101,24,.16), rgba(127,29,29,.16));
+    border:1px solid rgba(191,101,24,.25); border-radius:999px;
+  }
+  .form-grid{display:grid; grid-template-columns:1fr 2fr; gap:12px 16px; align-items:center;}
+  label{font-size:14px; color:#4a2e1a;}
+  .block-label{display:block; margin-bottom:6px;}
+
+  input[type="text"], select, textarea{
+    width:100%; padding:11px 12px; border:1px solid #d8c0b3; border-radius:12px; background:#fffaf5;
+    transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  input[type="text"]:focus, select:focus, textarea:focus{
+    outline:none; border-color:#7f1d1d; background:#fff;
+    box-shadow:0 0 0 3px rgba(127,29,29,.18), 0 6px 16px rgba(77,20,20,.08);
+  }
+
+  .inline-options{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:10px;}
+  .option-group{background:linear-gradient(180deg,#fffdf9,#fffaf6); border:1px solid #f1e6e4; border-radius:14px; padding:12px;}
+  .option-label{display:block; font-weight:700; margin-bottom:8px; color:#4b1d06;}
+  .option-group label{display:inline-block; margin-right:14px; padding:6px 10px; border-radius:999px; border:1px dashed #e5d1bf; background:#ffffff;}
+
+  .form-actions{display:flex; justify-content:flex-end; gap:10px; padding:12px 0 8px; border-top:1px dashed #ecd6c7; margin-top:10px;}
+  .btn{appearance:none; border:0; border-radius:999px; padding:11px 18px; cursor:pointer; font-weight:700; letter-spacing:.2px;}
+  .btn-primary{background:linear-gradient(135deg,#7f1d1d,#b45309); color:#fffaf3; box-shadow:0 10px 20px rgba(191,101,24,.35);}
+  .btn-primary:hover{filter:brightness(1.06); transform:translateY(-1px);}
+  .btn-primary:active{transform:translateY(0);}
+  .btn-secondary{background:linear-gradient(135deg,#f5e7dd,#f1e6e0); color:#4b1d06; border:1px solid #e5d1bf;}
+
+  .footer{text-align:center; color:#9f7e63; font-size:13px; margin-top:18px;}
+
+  @media (max-width:720px){
+    .gallery{grid-template-columns:1fr;}
+    .form-grid{grid-template-columns:1fr;}
+    .inline-options{grid-template-columns:1fr;}
+  }
+  /*]]>*/
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div>
+          <h1>Hotel Aurora</h1>
+          <p>Hangat, elegan, dan berkelas. Nikmati kenyamanan terbaik di tengah kota.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <form action="#" method="post" class="card form" id="reservation-form">
+      <fieldset>
+        <legend>Data Pemesan</legend>
+        <div class="form-grid">
+          <label for="fullname">Nama Lengkap</label>
+          <input type="text" id="fullname" name="fullname" />
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" />
+          <label for="phone">Telepon</label>
+          <input type="text" id="phone" name="phone" />
+          <label for="citizenship">Kewarganegaraan</label>
+          <select id="citizenship" name="citizenship">
+            <option value="">-- Pilih --</option>
+            <option value="ID">Indonesia</option>
+            <option value="MY">Malaysia</option>
+            <option value="SG">Singapura</option>
+            <option value="OTHER">Lainnya</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Detail Menginap</legend>
+        <div class="form-grid">
+          <label for="checkin">Check-in</label>
+          <input type="text" id="checkin" name="checkin" placeholder="YYYY-MM-DD" />
+          <label for="checkout">Check-out</label>
+          <input type="text" id="checkout" name="checkout" placeholder="YYYY-MM-DD" />
+          <label for="guests">Jumlah Tamu</label>
+          <select id="guests" name="guests">
+            <option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option>
+          </select>
+          <label for="roomtype">Tipe Kamar</label>
+          <select id="roomtype" name="roomtype">
+            <option value="standard">Standard</option>
+            <option value="deluxe">Deluxe</option>
+            <option value="suite">Suite</option>
+          </select>
+        </div>
+
+        <div class="inline-options">
+          <div class="option-group">
+            <span class="option-label">Tipe Kasur</span>
+            <label><input type="radio" name="bed" value="single" /> Single</label>
+            <label><input type="radio" name="bed" value="double" /> Double</label>
+            <label><input type="radio" name="bed" value="twin" /> Twin</label>
+          </div>
+
+          <div class="option-group">
+            <span class="option-label">Tambahan</span>
+            <label><input type="checkbox" name="breakfast" value="yes" /> Sarapan</label>
+            <label><input type="checkbox" name="pickup" value="yes" /> Jemput Bandara</label>
+            <label><input type="checkbox" name="smoking" value="yes" /> Kamar Merokok</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferensi</legend>
+        <label for="notes" class="block-label">Catatan Khusus</label>
+        <textarea id="notes" name="notes" rows="4" cols="30" placeholder="Contoh: kamar dekat lift, alergi, dsb."></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pembayaran</legend>
+        <div class="form-grid">
+          <label for="payment">Metode Pembayaran</label>
+          <select id="payment" name="payment">
+            <option value="cc">Kartu Kredit</option>
+            <option value="tf">Transfer Bank</option>
+            <option value="ewallet">e-Wallet</option>
+          </select>
+          <label for="promo">Kode Promo</label>
+          <input type="text" id="promo" name="promo" />
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <input type="reset" value="Reset" class="btn btn-secondary" />
+        <input type="submit" value="Pesan Sekarang" class="btn btn-primary" />
+      </div>
+    </form>
+
+    <div class="footer">
+      <p>&#169; 2025 Hotel Aurora — Tampilan latihan XHTML (Gold–Maroon Theme).</p>
+    </div>
+  </div>
+</body>
+</html>

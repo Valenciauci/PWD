@@ -1,0 +1,123 @@
+/* styles.css – Tampilan modern namun sederhana, sesuai tugas Week 7 */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(180deg, #f7f9fc, #ffffff);
+  color: #1f2937;
+}
+
+.page {
+  max-width: 920px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.header { text-align: center; margin-bottom: 16px; }
+h1 { margin: 0 0 6px 0; letter-spacing: .3px; }
+.subtitle { margin: 0; color: #6b7280; }
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(2, 6, 23, 0.08);
+}
+
+.form { padding: 18px 18px 8px; }
+
+fieldset {
+  border: 0;
+  padding: 12px 0 8px;
+  margin: 8px 0;
+  border-top: 1px solid #f1f5f9;
+}
+
+legend { padding: 0 8px; font-weight: 600; color: #0f172a; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px 14px;
+  align-items: center;
+}
+
+label { font-size: 14px; color: #374151; }
+.block-label { display: block; margin-bottom: 6px; }
+
+input[type="text"], select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #f9fafb;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+
+.inline-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.option-group {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.option-label { display: block; font-weight: 600; margin-bottom: 8px; color: #0f172a; }
+.option-group label { margin-right: 12px; font-size: 14px; }
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px 0 6px;
+  border-top: 1px dashed #e5e7eb;
+  margin-top: 8px;
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, .35);
+}
+.btn-primary:hover { filter: brightness(1.05); }
+.btn-primary:active { transform: translateY(1px); }
+
+.btn-secondary { background: #e5e7eb; color: #111827; }
+
+.footer {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+/* Responsif */
+@media (max-width: 680px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .inline-options { grid-template-columns: 1fr; }
+}
